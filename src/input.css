@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* add arrow menu  */
+#menu::after {
+	content: '';
+	position: absolute;
+	top: -20px;
+	right: 0;
+	border-width: 50px;
+	border-style: solid;
+	border-color: transparent white transparent transparent;
+}
+
+/* add header background image  */
+header {
+	background-image: url(../images/mobile/image-header.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+@media screen and (min-width: 768px){
+	header {
+		background-image: url(../images/desktop/image-header.jpg);
+	}
+}
+/* add animation on arrow  */
+header:hover #arrow_down {
+	animation: arrow 0.4s ease-in infinite;
+}
+main a {
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	@apply decoration-primary-Yellow;
+	text-decoration-style: wavy;
+}
+main a:hover {
+	text-decoration-color:   hsl(7, 99%, 70%);
+}
+
+@keyframes arrow {
+	0%,100% {
+		top: 55%;
+	} 
+	50% {
+		top: 50%;
+	}
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	position: fixed;
+	bottom: 5px;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
